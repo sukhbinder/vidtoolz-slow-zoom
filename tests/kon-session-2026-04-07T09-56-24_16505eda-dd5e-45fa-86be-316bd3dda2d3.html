@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kon v0.3.2 - 2026-04-07T09-56-24_16505eda-dd5e-45fa-86be-316bd3dda2d3</title>
+<style>
+body { margin: 0; padding: 2rem 0; background: #282828; }
+.header {
+  max-width: 960px; margin: 0 auto 1rem; padding: 0 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+.header h1 { color: #fabd2f; font-size: 1.3rem; margin: 0 0 0.25rem; }
+.header p { color: #8b949e; font-size: 0.8rem; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>kon v0.3.2</h1>
+<p>exported 2026-04-07 10:56:37</p>
+</div>
+<pre style="font-family: 'JetBrains Mono', Menlo, 'DejaVu Sans Mono', consolas, 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: #c9d1d9; padding: 2rem; max-width: 960px; margin: 0 auto; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code style="font-family: inherit"><span style="color: #7c6f64; text-decoration-color: #7c6f64"> ID        </span> 16505eda-dd5e-45fa-86be-316bd3dda2d3                     
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Directory </span> /Users/sukhbindersingh/PROJECTS/vidtoolz-slow-zoom/tests 
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Created   </span> 2026-04-07T09:56:24.137165+00:00                         
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Model     </span> unsloth_Qwen3.5-4B-GGUF_Qwen3.5-4B-Q4_K_M (openai)       
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Thinking  </span> high                                                     
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Messages  </span> 0 user, 0 assistant, 0 tool calls                        
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"> Tokens    </span> ↑0 ↓0                                                    
+
+---
+
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">You are an expert coding assistant called `Kon`.</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">You help users by reading, searching, executing commands, editing code, and writing new files.</span>
+
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">## Tool usage</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- Prefer specialized tools over bash for file operations:</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">  - Use read to view files (NOT cat/head/tail)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">  - Use edit for precise changes (NOT sed/awk)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">  - Use write only for new files or complete rewrites (NOT echo &gt;/cat &lt;&lt;EOF)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">  - Use grep to search file contents (NOT grep or rg via bash)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">  - Use find to search for files by name/glob (NOT find or ls via bash)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- Use bash for terminal operations (git, package managers, builds, tests, running scripts)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- When summarizing your actions, output plain text directly DO NOT use cat or bash to display</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- Be concise in your responses</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- Show file paths clearly when working with files</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">- Use web_search/web_fetch instead of curl/wget via bash</span>
+
+<span style="color: #7c6f64; text-decoration-color: #7c6f64"># Env</span>
+
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Current date and time: Tuesday, April 07, 2026 at 10:56 AM</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Current working directory: /Users/sukhbindersingh/PROJECTS/vidtoolz-slow-zoom/tests</span>
+
+---
+
+<span style="font-weight: bold">Read</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (read)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Read the contents of a file or directory. File reads truncate to 2000 lines and 2000 chars per line. Use offset/limit to</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">paginate large files. Supports reading jpg/jpeg/png/gif/webp images.</span>
+<span style="font-weight: bold"> Parameter  Type     Description                                                                               </span>
+<span style="font-weight: bold"> path      </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Absolute path of the file or directory to read                                            
+<span style="font-weight: bold"> offset    </span><span style="color: #83a598; text-decoration-color: #83a598"> any     </span> Line number to start reading from. Only provide if the file is too large to read at once. 
+<span style="font-weight: bold"> limit     </span><span style="color: #83a598; text-decoration-color: #83a598"> any     </span> Number of lines to read. Only provide if the file is too large to read at once.           
+
+<span style="font-weight: bold">Edit</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (edit)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Edit a file by replacing exact text. The old_string must match exactly (including whitespaces). Use this for precise, </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">surgical edits.</span>
+<span style="font-weight: bold"> Parameter    Type     Description                                                     </span>
+<span style="font-weight: bold"> path        </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Absolute path of the file to edit                               
+<span style="font-weight: bold"> old_string  </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> The text to replace                                             
+<span style="font-weight: bold"> new_string  </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> The text to replace it with (must be different from old_string) 
+<span style="font-weight: bold"> replace_all </span><span style="color: #83a598; text-decoration-color: #83a598"> boolean </span> Replace all occurrences of old_string (default false)           
+
+<span style="font-weight: bold">Write</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (write)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Write content to a file. Creates the file if it doesn&#x27;t exist, overwrites if it does. Automatically creates parent </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">directories.</span>
+<span style="font-weight: bold"> Parameter  Type     Description                           </span>
+<span style="font-weight: bold"> path      </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Absolute path of the file to write to 
+<span style="font-weight: bold"> content   </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Content to be written to the file     
+
+<span style="font-weight: bold">Bash</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (bash)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Execute a bash command in the current working directory. Output truncated to last 2000 lines or 50KB. If truncated, full</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">output is saved to a temp file. Optionally provide a timeout in seconds. IMPORTANT: Do NOT use bash for file search (use</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">grep/find tools instead), reading files (use read), or editing files (use edit).</span>
+<span style="font-weight: bold"> Parameter  Type     Description                      </span>
+<span style="font-weight: bold"> command   </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> The bash command to execute      
+<span style="font-weight: bold"> timeout   </span><span style="color: #83a598; text-decoration-color: #83a598"> integer </span> Timeout in seconds (default 180) 
+
+<span style="font-weight: bold">Grep</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (grep)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Search file contents using ripgrep. Returns matching lines with file paths and line numbers, sorted by modification </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">time. Respects .gitignore. Truncated to 100 matches.</span>
+<span style="font-weight: bold"> Parameter  Type     Description                                                       </span>
+<span style="font-weight: bold"> pattern   </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> The regex pattern to search for in file contents                  
+<span style="font-weight: bold"> path      </span><span style="color: #83a598; text-decoration-color: #83a598"> any     </span> Directory or file to search (default: current directory)          
+<span style="font-weight: bold"> include   </span><span style="color: #83a598; text-decoration-color: #83a598"> any     </span> File pattern to include in the search (e.g. &quot;*.py&quot;, &quot;*.{ts,tsx}&quot;) 
+
+<span style="font-weight: bold">Find</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (find)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Search for files by glob pattern using fd. Returns matching file paths relative to the search directory, sorted by </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">modification time.Respects .gitignore. Truncated to 100 results.</span>
+<span style="font-weight: bold"> Parameter  Type     Description                                                                  </span>
+<span style="font-weight: bold"> pattern   </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Glob pattern to match files, e.g. &#x27;*.py&#x27;, &#x27;**/*.json&#x27;, or &#x27;src/**/*.spec.ts&#x27; 
+<span style="font-weight: bold"> path      </span><span style="color: #83a598; text-decoration-color: #83a598"> any     </span> Directory to search in (default: current directory)                          
+
+<span style="font-weight: bold">Web Search</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (web_search)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Search the web using DuckDuckGo. Returns titles, URLs, and snippets for each result. Use web_fetch to read full page </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">content from a result URL.</span>
+<span style="font-weight: bold"> Parameter    Type     Description                              </span>
+<span style="font-weight: bold"> query       </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> Search query                             
+<span style="font-weight: bold"> max_results </span><span style="color: #83a598; text-decoration-color: #83a598"> integer </span> Number of results to return (default 10) 
+
+<span style="font-weight: bold">Web Fetch</span><span style="color: #7c6f64; text-decoration-color: #7c6f64">  (web_fetch)</span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Fetch a web page and extract its main content as clean text. Strips navigation, ads, and boilerplate. Use web_search </span>
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">first to find relevant URLs (if not provided by the user).</span>
+<span style="font-weight: bold"> Parameter  Type     Description                                           </span>
+<span style="font-weight: bold"> url       </span><span style="color: #83a598; text-decoration-color: #83a598"> string* </span> URL of the web page to fetch and extract content from 
+
+
+---
+
+<span style="color: #7c6f64; text-decoration-color: #7c6f64">Model changed to unsloth_Qwen3.5-4B-GGUF_Qwen3.5-4B-Q4_K_M (openai)</span>
+
+</code></pre>
+</body>
+</html>

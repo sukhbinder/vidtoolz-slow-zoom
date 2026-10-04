@@ -1,0 +1,33 @@
+[project]
+name = "vidtoolz-slow-zoom"
+version = "0.1.0"
+description = "Slowzoom of text using ffmpeg"
+readme = "README.md"
+authors = [{name = "Sukhbinder Singh"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "vidtoolz",
+]
+
+[project.urls]
+Homepage = "https://github.com/sukhbinder/vidtoolz-slow-zoom"
+Changelog = "https://github.com/sukhbinder/vidtoolz-slow-zoom/releases"
+Issues = "https://github.com/sukhbinder/vidtoolz-slow-zoom/issues"
+CI = "https://github.com/sukhbinder/vidtoolz-slow-zoom/actions"
+
+[project.entry-points."vidtoolz_plugins"]
+slowzoom = "vidtoolz_slow_zoom:slowzoom_plugin"
+
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
